@@ -23,6 +23,7 @@ public class OVChipkaartVoorkant
 	Nijmegen.locatie = "Nijmegen";
 	
 	Boxmeer.Ingecheckt(gebruiker);
+	Cuijk.Uitgecheckt(gebruiker);
 	
     }
 
