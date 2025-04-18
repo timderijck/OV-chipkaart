@@ -2,7 +2,8 @@ package ovchipkaartsysteem;
 
 public class Chipkaart
 {
-    private int saldo;
+    private double GebruikerSaldo;
+    private double PasSaldo;
     private boolean geldig;
     private boolean StatusPaal;
     private String IncheckLocatie;
@@ -49,5 +50,29 @@ public class Chipkaart
     {
 	return Uitgecheckt;
     }
+    public double GetGebruikerSaldo() {
+	
+	return GebruikerSaldo;
+    }
+    public void SetGebruikerSaldo(double x) {
+	GebruikerSaldo = x;
+    }
+    public double GetPasSaldo() {
+	
+	return PasSaldo;
+    }
+    public void SetPasSaldo(double x) {
+	PasSaldo = x;
+    }
+    private int IncheckLocatieNummer;
+
+    public void SetIncheckLocatieNummer(int nummer) {
+        IncheckLocatieNummer = nummer;
+    }
+
+    public int GetIncheckLocatieNummer() {
+        return IncheckLocatieNummer;
+    }
 
 }
+
