@@ -50,6 +50,7 @@ public class Chipkaart
     {
 	return Uitgecheckt;
     }
+    // GebruikerSaldo aanmaken en vastleggen
     public double GetGebruikerSaldo() {
 	
 	return GebruikerSaldo;
@@ -57,6 +58,7 @@ public class Chipkaart
     public void SetGebruikerSaldo(double x) {
 	GebruikerSaldo = x;
     }
+    // PasSaldo aanmaken en vastleggen
     public double GetPasSaldo() {
 	
 	return PasSaldo;
@@ -64,6 +66,7 @@ public class Chipkaart
     public void SetPasSaldo(double x) {
 	PasSaldo = x;
     }
+    //IncheckLocaties aangemaakt
     private int IncheckLocatieNummer;
 
     public void SetIncheckLocatieNummer(int nummer) {
@@ -73,6 +76,16 @@ public class Chipkaart
     public int GetIncheckLocatieNummer() {
         return IncheckLocatieNummer;
     }
+    // Geen getter/setter, maar hoort wel nog bij de chipkaart
+    public void OpwaarderenGebruikerSaldo(double bedrag) {
+	    GebruikerSaldo += bedrag;
+	    System.out.println("GebruikerSaldo is opgewaardeerd met €" + bedrag);
+	}
+
+	public void OpwaarderenPasSaldo(double bedrag) {
+	    PasSaldo += bedrag;
+	    System.out.println("PasSaldo is opgewaardeerd met €" + bedrag);
+	}
 
 }
 

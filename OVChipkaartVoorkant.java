@@ -1,17 +1,54 @@
 package ovchipkaartsysteem;
 
+import java.util.Scanner;
+
+
 public class OVChipkaartVoorkant
 {
 
     public static void main(String[] args)
     {
-	// Aanmaken van de gebruiker en zijn geldigheid laten testen
+	
+	// Scanner maken voor invoer
+	Scanner input = new Scanner(System.in);
+
+	// Aanmaken van de gebruiker en zijn geldigheid laten checken
 	Chipkaart gebruiker = new Chipkaart();
 	gebruiker.SetGeldigheid(true);
 	gebruiker.SetStatusPaal(true);
 	gebruiker.SetGebruikerSaldo(20.00);
 	gebruiker.SetPasSaldo(5.00);
-	
+
+	// Vragen of gebruiker wil opwaarderen
+	System.out.println("Wilt u uw saldo opwaarderen? Typ 'ja' of 'nee':");
+	String antwoord = input.nextLine();
+
+	if (antwoord.equals("ja")) {
+	    System.out.println("Typ het bedrag dat u wilt opwaarderen (bijvoorbeeld 10):");
+	    String bedragInvoer = input.nextLine();
+	    double bedrag = Double.parseDouble(bedragInvoer);
+
+	    if (bedrag > 0) {
+	        System.out.println("Typ '1' om gebruikerSaldo op te waarderen of '2' voor pasSaldo:");
+	        String keuze = input.nextLine();
+
+	        if (keuze.equals("1")) {
+	            gebruiker.OpwaarderenGebruikerSaldo(bedrag);
+	        } else if (keuze.equals("2")) {
+	            gebruiker.OpwaarderenPasSaldo(bedrag);
+	        } else {
+	            System.out.println("Ongeldige keuze. Geen opwaardering uitgevoerd.");
+	        }
+	    } else {
+	        System.out.println("Het bedrag moet groter zijn dan 0. Geen opwaardering uitgevoerd.");
+	    }
+	} else if (antwoord.equals("nee")) {
+	    System.out.println("Geen opwaardering uitgevoerd.");
+	} else {
+	    System.out.println("Fout: Ongeldige invoer. Programma wordt gestopt.");
+	    System.exit(0); // programma stopt direct
+	}
+
 	// Alle verschillende locaties 'objects'
 	Paal Boxmeer = new Paal();
 	Paal Cuijk = new Paal();
@@ -47,7 +84,7 @@ public class OVChipkaartVoorkant
 	// (Locatie uitchecken van de gebruiker
 	Nijmegen.Uitgecheckt(gebruiker);
 	
-	
+
     }
 
 }

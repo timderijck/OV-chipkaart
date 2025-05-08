@@ -71,7 +71,7 @@ public class Paal
 
 	}
     }
-
+    // Reis kosten berekenen
     public void ReisKostenBerekening(Chipkaart x)
     {
         int incheckNummer = x.GetIncheckLocatieNummer();
